@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <header class="header">
+    <i class="fa-solid fa-cloud-sun-rain header__weather-icon"></i>
+    <h1 class="header__title">Weatherly</h1>
+  </header>
+
+  <main class="main">
+    <div class="weather-data">
+      <div class="weather-data__primary-data">
+        <h2 class="weather-data__weather"></h2>
+        <img src="" class="weather-data__image" alt="Weather image">
+        <h4 class="weather-data__time"></h4>
+        <h1 class="weather-data__temperature"><span class="weather-data__temperature-value"></span> °C</h1>
+      </div>
+
+      <div class="info-search-container">
+        <h1 class="info-search__location"> <span class="info-search__city"></span>, <span class="info-search__country"></span> </h1>
+        <p class="info-search__sunrise-time">Sun rises at: <span class="info-search__sunrise-time-value"></span> </p>
+        <p class="info-search__sunset-time"> Sun sets at: <span class="info-search__sunset-time-value"></span> </p>
+        <h2 class="info-search__title">Check another location?</h2>
+        <div class="info-search__search-container">
+          <input class="info-search__search-input" placeholder="Search Location...">
+          <i class="fa-solid fa-magnifying-glass info-search__search-icon"></i>
+        </div>
+        <h3 class="info-search__error"></h3>
+      </div>
+
+      <div class="weather-details__secondary-data">
+        <div class="weather-details__feels-like-container">
+          <i class="fa-solid fa-temperature-half weather-details__icon"></i>
+          <div class="weather-details__feels-like">
+            <p class="weather-details__subtitle">Feels like</p>
+            <p class="weather-details__feels-like-row"><span class="weather-details__feels-like-value"></span> °C</p> 
+          </div>
+        </div>
+
+        <div class="weather-details__humidity-container">
+          <i class="fa-solid fa-droplet weather-details__icon"></i>
+          <div class="weather-details__humidity">
+            <p class="weather-details__subtitle">Humidity</p>
+            <p class="weather-details__humidity-row"> <span class="weather-details__humidity-value"></span> %</p>
+          </div>
+        </div>
+
+        <div class="weather-details__wind-speed-container">
+          <i class="fa-solid fa-wind weather-details__icon"></i>
+          <div class="weather-details__wind-speed">
+            <p class="weather-details__subtitle">Wind speed</p>
+            <p class="weather-details__wind-speed-row"> <span class="weather-details__wind-speed-value"></span> km/h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
