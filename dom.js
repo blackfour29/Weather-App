@@ -13,6 +13,7 @@ const DOM = (() => {
   const sunriseEl = document.querySelector('.info-search__sunrise-time-value');
   const sunsetEl = document.querySelector('.info-search__sunset-time-value');
   const searchErrorEl = document.querySelector('.info-search__error');
+  const searchInputEl = document.querySelector('.info-search__search-input');
 
   function renderRelevantWeatherData(data) {
     const weatherDescription = Utils.capitalizeFirstLetter(data.weather[0].description);
@@ -93,10 +94,15 @@ const DOM = (() => {
     localTimeEl.textContent = time;
   }
 
+  function clearSearchInput() {
+    searchInputEl.value = '';
+  }
+
   return {
     renderRelevantWeatherData,
     showErrorMessage,
     hideErrorMessage,
+    clearSearchInput,
   };
 })();
 

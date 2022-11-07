@@ -40,11 +40,13 @@ async function error() {
 searchIconEl.addEventListener('click', () => {
   const city = searchInputEl.value;
   handleSearch(city);
+  DOM.clearSearchInput();
 });
 
 searchInputEl.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     handleSearch(searchInputEl.value);
+    DOM.clearSearchInput();
   }
 });
 
@@ -62,16 +64,16 @@ async function handleSearch(city) {
   }
 }
 
-function getWeatherData(city) {
-  return fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9d0988d6bbff4eaed4600b00f635bf0`
-  )
-    .then((res) => {
-      return res.json();
-    })
-    .catch((err) => {
-      throw new Error(err.message);
-    });
+async function getWeatherData(city) {
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=e9d0988d6bbff4eaed4600b00f635bf0`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 function getUserLocation(lat, lng) {
